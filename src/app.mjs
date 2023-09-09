@@ -7,6 +7,15 @@ import chalk from "chalk";
 const PORT = port || 3000
 
 const app = express()
+app.use(express.json())
+
+app.get('/' , (req,res) =>{
+    return res.send('Hello World')
+})
+
+app.get('/message', (req,res) =>{
+    res.send("<h1>I Love You My Mom❤️</h1")
+})
 
 connectDb()
 
