@@ -1,3 +1,3 @@
-export const createPost = async(req, res)=>{
+export const loginUser = async(req, res)=>{
   res.send("Post Create Now ...")
 }
