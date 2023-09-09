@@ -7,7 +7,7 @@ const connectDb = async() =>{
 
        await mongoose.connect(dbURL)
 
-        console.log(`${chalk.green.bold('Connect')} to Database Successfully`)
+        console.log(`${chalk.green.bold('Connect')} to Database ${chalk.blue.bold('Successfully')}`)
 
     }catch(err){
         console.log(`${chalk.red.bold('Error')} Connect to Database`,err)
