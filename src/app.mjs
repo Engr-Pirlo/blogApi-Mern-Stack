@@ -3,19 +3,18 @@ import { port } from "./config/config.js";
 import connectDb from "./config/db.js";
 
 import chalk from "chalk";
+// import { hellWorld } from "./controllers/userController.js";
+import usersRouter from "./routes/Users..js";
+import postRouter from "./routes/posts.js";
 
 const PORT = port || 3000
 
 const app = express()
 app.use(express.json())
 
-app.get('/' , (req,res) =>{
-    return res.send('Hello World')
-})
-
-app.get('/message', (req,res) =>{
-    res.send("<h1>I Love You My Mom❤️</h1")
-})
+// ap.use(express.static('./public'))
+app.use('/api/v1/users',usersRouter)
+app.use('/api/v1/posts' , postRouter)
 
 connectDb()
 
