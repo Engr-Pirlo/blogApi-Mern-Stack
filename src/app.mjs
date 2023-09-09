@@ -1,6 +1,7 @@
 import express from "express";
 import { port } from "./config/config.js";
 import connectDb from "./config/db.js";
+
 import chalk from "chalk";
 
 const PORT = port || 3000
