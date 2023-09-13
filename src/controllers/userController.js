@@ -4,6 +4,7 @@ export const registerUser = async (req , res) =>{
     try{
 
         const {username, password ,email} = req.body
+        
         const userExist = await User.findOne({email})
 
         if(userExist){
@@ -18,7 +19,7 @@ export const registerUser = async (req , res) =>{
 
         await user.save()
 
-        res.status(201).send({status: true, message:{username: user.username, email: user.email}});
+        res.status(201).send({status: true, message:{ username: user.username, email: user.email}});
 
     }catch(err){
         console.log("Error at User Register" , err)
