@@ -18,11 +18,13 @@ export const registerUser = async (req , res) =>{
 
         await user.save()
 
-        res.status(201).send({status: false, message:{username:user.username.email}})
+        res.status(201).send({status: true, message:{username: user.username, email: user.email}});
 
     }catch(err){
-        console.log("Error at User Registion" , err)
+        console.log("Error at User Register" , err)
         res.status(500).send({status: "false" , message: "UnKnow Error"})
     }
     
 }
+
+
