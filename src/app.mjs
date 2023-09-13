@@ -4,17 +4,17 @@ import connectDb from "./config/db.js";
 
 import chalk from "chalk";
 // import { hellWorld } from "./controllers/userController.js";
-import usersRouter from "./routes/Users..js";
-import postRouter from "./routes/posts.js";
+import { registerUser } from "./controllers/userController.js";
+import { loginUser } from "./controllers/postsController.js";
 
 const PORT = port || 3000
 
 const app = express()
 app.use(express.json())
 
-// ap.use(express.static('./public'))
-app.use('/api/v1/users',usersRouter)
-app.use('/api/v1/posts' , postRouter)
+
+app.use('/api/v1/users',registerUser)
+app.use('/api/v1/posts' , loginUser)
 
 connectDb()
 

@@ -3,7 +3,8 @@ import { CreateUser,} from '../controllers/userController.js'
 
 const usersRouter = express.Router()
 
-usersRouter.get('/' , CreateUser)
+usersRouter.get('/register-user' , registerUser)
+usersRouter.get('/login' , loginUser)
 
 
 export default usersRouter
